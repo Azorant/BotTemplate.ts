@@ -1,0 +1,14 @@
+{
+  "tasks": {
+    "dev": "deno run --watch --allow-net --allow-env --allow-read src/index.ts"
+  },
+  "imports": {
+    "@discordjs/builders": "npm:@discordjs/builders@^1.9.0",
+    "@std/datetime": "jsr:@std/datetime@^0.225.2",
+    "@std/dotenv": "jsr:@std/dotenv@^0.225.2",
+    "@std/fs": "jsr:@std/fs@^1.0.5",
+    "@std/path": "jsr:@std/path@^1.0.8",
+    "discord-api-types": "npm:discord-api-types@^0.37.103",
+    "discord.js": "npm:discord.js@^14.16.3"
+  }
+}
