@@ -10,5 +10,14 @@
     "@std/path": "jsr:@std/path@^1.0.8",
     "discord-api-types": "npm:discord-api-types@^0.37.103",
     "discord.js": "npm:discord.js@^14.16.3"
+  },
+  "fmt": {
+    "lineWidth": 160,
+    "semiColons": true,
+    "singleQuote": true,
+    "proseWrap": "preserve",
+    "include": [
+      "src/"
+    ]
   }
 }

@@ -33,7 +33,10 @@ export class Main {
   }
 
   private log(level: LogLevel, module: string, ...data: unknown[]) {
-    console.log(`${datetime.format(new Date(), 'HH:mm:ss')} [${level === LogLevel.Info ? 'info' : level === LogLevel.Warning ? 'warn' : 'error'}] [${module}]`, ...data);
+    console.log(
+      `${datetime.format(new Date(), 'HH:mm:ss')} [${level === LogLevel.Info ? 'info' : level === LogLevel.Warning ? 'warn' : 'error'}] [${module}]`,
+      ...data,
+    );
   }
 
   info(module: string, ...data: unknown[]) {
@@ -83,7 +86,9 @@ export class Main {
 
   async deployCommands() {
     const commands = this.commands.map((command: Command) => command.definition.toJSON());
-    const data = (await this.client.rest.put(Routes.applicationGuildCommands(this.client.user!.id, Deno.env.get('DEV_GUILD')!), { body: commands })) as unknown[];
+    const data = (await this.client.rest.put(Routes.applicationGuildCommands(this.client.user!.id, Deno.env.get('DEV_GUILD')!), {
+      body: commands,
+    })) as unknown[];
 
     this.info('Client', `Registered ${data.length} commands`);
   }
